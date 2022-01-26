@@ -143,6 +143,10 @@ void X_g_signal_emit_buffer_by_name(GstElement* element, const gchar* detailed_s
   g_signal_emit_by_name(element, detailed_signal, buffer, ret);
 }
 
+void X_g_signal_emit_by_name(GstElement* element, const gchar* p_name) {
+  g_signal_emit_by_name(element, p_name);
+}
+
 GstBuffer *X_gst_buffer_new_wrapped(gchar* src, gsize len) {
   GstBuffer* dst;
 

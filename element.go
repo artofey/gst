@@ -417,6 +417,13 @@ func (e *Element) SetPadAddedCallback(callback PadAddedCallback) {
 	C.X_g_signal_connect(e.GstElement, detailedSignal, C.guint64(callbackID))
 }
 
+func (e *Element) SignalEmitByName(name string) {
+	CName := (*C.gchar)(unsafe.Pointer(C.CString(name)))
+	defer C.g_free(C.gpointer(unsafe.Pointer(CName)))
+
+	C.X_g_signal_emit_by_name(e.GstElement, CName)
+}
+
 func ElementFactoryMake(factoryName string, name string) (e *Element, err error) {
 	var pName *C.gchar
 

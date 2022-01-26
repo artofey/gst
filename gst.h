@@ -46,6 +46,7 @@ extern GstElement *X_gst_bin_get_by_name(GstElement* element, const gchar* name)
 extern GstElementClass *X_GST_ELEMENT_GET_CLASS(GstElement *element);
 extern void X_GST_DEBUG_BIN_TO_DOT_FILE(GstElement *element, const gchar* name);
 extern void X_g_signal_emit_buffer_by_name(GstElement* element, const gchar* detailed_signal, GstBuffer* buffer, GstFlowReturn* ret);
+extern void X_g_signal_emit_by_name(GstElement* element, const gchar* p_name);
 extern GstBuffer *X_gst_buffer_new_wrapped(gchar* src, gsize len);
 extern gboolean X_gst_buffer_map(GstBuffer* gstBuffer, GstMapInfo* mapInfo);
 extern void X_gst_pipeline_use_clock(GstElement *element, GstClock *clock);
